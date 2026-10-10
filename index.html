@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#8ecf5a" />
+  <title>Tankster.io</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <canvas id="mini" width="120" height="120"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="scorebar">
+      <div id="scoretxt">Score: 0</div>
+      <div id="maptxt"></div>
+      <div id="levelbar"><div id="levelfill"></div></div>
+      <div id="lvltxt">Lvl 1</div>
+    </div>
+    <div id="lb"></div>
+    <button type="button" id="btnSet" class="iconbtn">⚙</button>
+    <div id="chat">
+      <div id="clog"></div>
+      <input id="cin" maxlength="80" placeholder="Chat… Enter" autocomplete="off" />
+    </div>
+    <div id="partybar">
+      <button type="button" id="pCreate" class="pbtn">Party</button>
+      <input id="pCode" maxlength="6" placeholder="Code" />
+      <button type="button" id="pJoin" class="pbtn">Join</button>
+      <span id="pInfo"></span>
+    </div>
+    <div id="upgrades" class="hidden"></div>
+    <div id="classes" class="hidden"></div>
+  </div>
+
+  <div id="death" class="hidden">
+    <div class="dcard">
+      <h2>You were destroyed</h2>
+      <p id="dby">by —</p>
+      <div id="dstats"></div>
+      <p class="dnote">Respawning…</p>
+    </div>
+  </div>
+
+  <div id="settings" class="hidden">
+    <div class="scard">
+      <h2>Settings</h2>
+      <label>Master <input type="range" id="volM" min="0" max="100" value="70" /></label>
+      <label>SFX <input type="range" id="volS" min="0" max="100" value="80" /></label>
+      <label>Music <input type="range" id="volMu" min="0" max="100" value="35" /></label>
+      <label><input type="checkbox" id="muteAll" /> Mute all</label>
+      <label>Graphics
+        <select id="gfx"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+      </label>
+      <div class="srow">
+        <button type="button" id="setSave">Save</button>
+        <button type="button" id="setClose" class="sec">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile" class="hidden">
+    <div id="joy"><div id="knob"></div></div>
+    <button id="fire" type="button"><span></span></button>
+  </div>
+
+  <div id="menu">
+    <div class="card">
+      <h1>Tankster.io</h1>
+      <p>v6 · accounts · party · chat · regions</p>
+      <input id="name" maxlength="14" placeholder="Nickname" value="tank" />
+      <input id="pass" type="password" maxlength="64" placeholder="Password (account)" />
+      <div class="row2">
+        <button type="button" id="reg" class="sec">Register</button>
+        <button type="button" id="login" class="sec">Login</button>
+      </div>
+      <div id="acct" style="font-size:12px;color:#555;margin-bottom:8px;min-height:16px"></div>
+      <select id="mode">
+        <option value="ffa">FFA</option>
+        <option value="tdm2">2 Teams</option>
+        <option value="tdm4">4 Teams</option>
+        <option value="domination">Domination</option>
+        <option value="tag">Tag</option>
+        <option value="maze">Maze</option>
+        <option value="corridors">Corridors</option>
+        <option value="boxes">Boxes</option>
+        <option value="sandbox">Sandbox</option>
+      </select>
+      <button id="play" type="button">Play</button>
+      <button type="button" id="btnSetMenu" class="sec full">Settings</button>
+      <div id="regions" style="text-align:left;font-size:11px;color:#555;margin-top:8px"></div>
+      <div id="glb" style="text-align:left;font-size:11px;color:#666;margin-top:6px;max-height:70px;overflow:auto"></div>
+      <div id="msg"></div>
+      <div class="hint">WASD + mouse · mobile stick + fire</div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "tankster-io",
+  "version": "1.0.0",
+  "description": "Tankster.io \u2014 original diep-style tank arena (PC + mobile)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ws": "^8.18.0"
+  }
+}
